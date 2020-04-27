@@ -1,0 +1,32 @@
+<h1>Lista de Players</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Raça</th>
+            <th>Battletag</th>
+        </tr>
+    </thead>
+{{#each players as | player |}}
+
+    <tr>
+        <td>{{player.dataValues.id}}</td>
+        <td>{{player.dataValues.name}}</td>
+        <td>{{player.dataValues.email}}</td>
+        <td>{{player.dataValues.race}}</td>
+        <td>{{player.dataValues.battletag}}</td>
+    </tr>
+{{/each}}
+</table>
+
+<button id="addPlayerButton">Add Player</button>
+
+<script type="text/javascript"> 
+    document.getElementById('addPlayerButton').addEventListener('click', event => {
+        console.log('Clicked')
+        location.href = 'player'
+    })
+</script>

@@ -1,0 +1,30 @@
+
+/*
+ * NO NEEDED ANYMORE, WE USE SEQUELIZE.sync() TO GENERATE THE DB.
+const sqlite3 = require('sqlite3').verbose()
+
+const db = new sqlite3.Database('/tmp/db.sqlite');
+
+db.run(`create table player(
+    id integer,
+    name text,
+    email: text
+    race: text,
+    battletag text,
+    facebook text,
+    whatsapp text
+)`);
+
+*/
+
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize({
+        storage: '/tmp/db.sqlite',
+        dialect: 'sqlite'
+    });
+
+module.exports = {
+    Sequelize: Sequelize,
+    sequelize: sequelize
+}
